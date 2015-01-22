@@ -4,6 +4,10 @@ class Person
 	def initialize(name)
 		@name = name
 	end
+
+	def to_s
+		"Hi, my name is #{name}"
+	end
 end
 
 class Student < Person
@@ -17,11 +21,3 @@ class Instructor < Person
 		"Everything in Ruby is an Object"
 	end
 end
-
-student = Student.new
-instructor = Instructor.new
-john = Person.new("john")
-
-puts student.learn
-puts instructor.teach
-puts john
