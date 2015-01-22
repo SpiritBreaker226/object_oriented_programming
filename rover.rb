@@ -1,5 +1,5 @@
 class Rover
-	attr_accessor :x, :y, :direction
+	attr_reader :x, :y, :direction
 
 	def initialize(x, y, direction)
 		@x = x
@@ -20,7 +20,7 @@ class Rover
 	private
 
 	def move
-		case direction
+		case @direction
 			when "N"
 				@y += 1
 			when "E"
@@ -35,13 +35,18 @@ class Rover
 	end
 
 	def turn(direction)
+
+		if direction == "L"
+		elsif direction == "R"
+		end
 	end
 end
 
 rover1 = Rover.new(1, 2, "N")
-rover1.read_instruction("LML")
+rover1.read_instruction("LMLM")
 puts "x: #{rover1.x} y: #{rover1.y}"
-
+rover1.read_instruction("RM")
+puts "x: #{rover1.x} y: #{rover1.y}"
 
 # 5.times do |input|
 # 	puts "Enter a input"
