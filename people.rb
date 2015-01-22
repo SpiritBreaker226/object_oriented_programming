@@ -24,3 +24,6 @@ end
 
 chris = Instructor.new("Chris")
 puts chris
+
+cristina = Student.new("Cristina")
+puts cristina
