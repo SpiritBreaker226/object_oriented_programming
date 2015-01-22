@@ -17,3 +17,11 @@ class Instructor
 		"Everything in Ruby is an Object"
 	end
 end
+
+student = Student.new
+instructor = Instructor.new
+john = Person.new("john")
+
+puts student.learn
+puts instructor.teach
+puts john
