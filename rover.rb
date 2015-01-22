@@ -34,19 +34,40 @@ class Rover
 		end
 	end
 
-	def turn(direction)
-
-		if direction == "L"
-		elsif direction == "R"
+	def turn(instruction)
+		if instruction == "L"
+			case @direction
+				when "N"
+					@direction = "W"
+				when "E"
+					@direction = "N"
+				when "S"
+					@direction = "E"
+				when "W"
+					@direction = "S"
+			end
+		elsif instruction == "R"
+			case @direction
+				when "N"
+					@direction = "E"
+				when "E"
+					@direction = "S"
+				when "S"
+					@direction = "W"
+				when "W"
+					@direction = "N"
+			end
 		end
 	end
 end
 
 rover1 = Rover.new(1, 2, "N")
-rover1.read_instruction("LMLM")
-puts "x: #{rover1.x} y: #{rover1.y}"
-rover1.read_instruction("RM")
-puts "x: #{rover1.x} y: #{rover1.y}"
+rover1.read_instruction("LMLMLMLMM")
+puts "Rover 1: x: #{rover1.x} y: #{rover1.y} d: #{rover1.direction}"
+
+rover2 = Rover.new(3, 3, "E")
+rover2.read_instruction("MMRMMRMRRM")
+puts "Rover 2: x: #{rover2.x} y: #{rover2.y} d: #{rover2.direction}"
 
 # 5.times do |input|
 # 	puts "Enter a input"
