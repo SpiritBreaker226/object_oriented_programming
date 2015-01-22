@@ -20,6 +20,18 @@ class Rover
 	private
 
 	def move
+		case direction
+			when "N"
+				@y += 1
+			when "E"
+				@x += 1
+			when "S"
+				@y -= 1
+			when "W"
+				@x -= 1
+			else
+				nil
+		end
 	end
 
 	def turn(direction)
@@ -28,6 +40,8 @@ end
 
 rover1 = Rover.new(1, 2, "N")
 rover1.read_instruction("LML")
+puts "x: #{rover1.x} y: #{rover1.y}"
+
 
 # 5.times do |input|
 # 	puts "Enter a input"
