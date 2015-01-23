@@ -17,6 +17,10 @@ class Rover
 		end
 	end
 
+	def to_s
+		"#{@x} #{@y} #{@direction}"
+	end
+
 	private
 
 	def move
@@ -63,21 +67,8 @@ end
 
 rover1 = Rover.new(1, 2, "N")
 rover1.read_instruction("LMLMLMLMM")
-puts "Rover 1: x: #{rover1.x} y: #{rover1.y} d: #{rover1.direction}"
+puts rover1
 
 rover2 = Rover.new(3, 3, "E")
 rover2.read_instruction("MMRMMRMRRM")
-puts "Rover 2: x: #{rover2.x} y: #{rover2.y} d: #{rover2.direction}"
-
-# 5.times do |input|
-# 	puts "Enter a input"
-# 	input = gets.chomp
-
-# 	instruction = input.split(" ")
-
-# 	if instruction.count == 1
-
-# 	end
-	
-# end
-
+puts rover2
