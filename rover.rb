@@ -40,19 +40,21 @@ class Rover
 
 	def turn(instruction)
 		if instruction == "L"
-			@direction = case @direction
-				when "N" then "W"
-				when "E" then "N"
-				when "S" then "E"
-				when "W" then "S"
-			end
+			@direction = 
+				case @direction
+					when "N" then "W"
+					when "E" then "N"
+					when "S" then "E"
+					when "W" then "S"
+				end
 		elsif instruction == "R"
-			@direction = case @direction
-				when "N" then "E"
-				when "E" then "S"
-				when "S" then "W"
-				when "W" then "N"
-			end
+			@direction = 
+				case @direction
+					when "N" then "E"
+					when "E" then "S"
+					when "S" then "W"
+					when "W" then "N"
+				end
 		end
 	end
 end
