@@ -1,10 +1,10 @@
 class Rover
 	attr_reader :x, :y, :direction
 
-	def initialize(x, y, direction)
-		@x = x
-		@y = y
-		@direction = direction
+	def initialize(optional = {})
+		@x = optional[:x].to_i || 0
+		@y = optional[:y].to_i || 0
+		@direction = optional[:direction].to_s || "N"
 	end
 
 	def read_instruction(instructions)
@@ -65,10 +65,26 @@ class Rover
 	end
 end
 
-rover1 = Rover.new(1, 2, "N")
-rover1.read_instruction("LMLMLMLMM")
-puts rover1
+output = ""
 
-rover2 = Rover.new(3, 3, "E")
-rover2.read_instruction("MMRMMRMRRM")
-puts rover2
+puts "Enter the size of the plateau"
+x_y_plateau = gets.chomp.split(" ")
+
+2.times do 
+	puts "Enter the starting position for the rover"
+	x_y_d_rover = gets.chomp.split(" ")
+
+	puts "Enter the instructions for the rover using either L R or M, all together"
+	rover_instructions = gets.chomp
+
+	rover = Rover.new({
+		x: x_y_d_rover[0],
+		y: x_y_d_rover[1],
+		direction: x_y_d_rover[2]
+	})
+
+	rover.read_instruction(rover_instructions)
+	output += rover.to_s << "\n"
+end
+
+puts output
