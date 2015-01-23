@@ -1,6 +1,4 @@
 class Rover
-	attr_reader :x, :y, :direction
-
 	def initialize(optional = {})
 		@x = optional[:x].to_i || 0
 		@y = optional[:y].to_i || 0
@@ -33,8 +31,6 @@ class Rover
 				@y -= 1
 			when "W"
 				@x -= 1
-			else
-				nil
 		end
 	end
 
@@ -80,5 +76,3 @@ x_y_plateau = gets.chomp.split(" ")
 	rover.read_instruction(rover_instructions)
 	output += rover.to_s << "\n"
 end
-
-puts output
