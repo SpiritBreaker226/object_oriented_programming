@@ -1,3 +1,4 @@
+require_relative "./product.rb"
 require_relative "./tax.rb"
 require_relative "./menu.rb"
 
@@ -10,7 +11,11 @@ class Receipt
 			puts "Enter New Product(\# 'Product Name' at Price) or type total to display the grand total"
 			product_input = gets.chomp
 
-			unless product_input == "total" ? receipt.add_product(product_input) : break
+			if product_input == "total" 
+				break 
+			else
+				receipt.add_product(product_input)
+			end
 		end
 
 		puts receipt
@@ -18,12 +23,12 @@ class Receipt
 
 	def initialize
 		@products = []
-		@sales_tax =  tax,new(0.1, ["Books", "Food", "Medical"])
-		@import_tax = tax,new(0.05, [])
+		@sales_tax =  Tax.new(0.1, ["Books", "Food", "Medical"])
+		@import_tax = Tax.new(0.05, [])
 		@tax_total = 0
 		@grand_total = 0
 	end
-
+	
 	def to_s
 		"Sales Taxes: #{@tax_total}\nTotal: #{@tax_total + @grand_total}"
 	end
