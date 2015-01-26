@@ -23,6 +23,10 @@ class Receipt
 		@tax_total = 0
 		@grand_total = 0
 	end
+
+	def to_s
+		"Sales Taxes: #{@tax_total}\nTotal: #{@tax_total + @grand_total}"
+	end
 end
 
 while true
