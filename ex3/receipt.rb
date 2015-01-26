@@ -3,6 +3,16 @@ require_relative "./menu.rb"
 class Receipt
 
 	def self.run
+		receipt = Receipt.new
+
+		while true
+			puts "Enter New Product(\# 'Product Name' at Price) or type total to display the grand total"
+			product_input = gets.chomp
+
+			unless product_input == "total" ? receipt.add_product(product_input) : break
+		end
+
+		puts receipt
 	end
 end
 
