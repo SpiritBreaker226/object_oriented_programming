@@ -7,6 +7,10 @@ class Tax
 
 		exempt.each { |type| @exempt << type }
 	end
+
+	def is_exempt?(product_type)
+		@exempt.include?(product_type)
+	end
 	
 	def +(other_tax)
 		@tax_rate + other_tax.tax_rate
