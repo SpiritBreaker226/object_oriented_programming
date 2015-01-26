@@ -1,11 +1,11 @@
 class Tax
-	attr_reader :tax_rate, :except_type
+	attr_reader :tax_rate, :exempt
 
-	def initialize(tax_rate_in_precent, except_type)
+	def initialize(tax_rate_in_precent, exempt)
 		@tax_rate = tax_rate_in_precent
-		except_type = []
+		exempt = []
 
-		except_type.each { |type| except_type << type }
+		exempt.each { |type| @exempt << type }
 	end
 	
 	def +(other_tax)
