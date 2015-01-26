@@ -1,3 +1,4 @@
+require_relative "./tax.rb"
 require_relative "./menu.rb"
 
 class Receipt
@@ -13,6 +14,14 @@ class Receipt
 		end
 
 		puts receipt
+	end
+
+	def initialize
+		@products = []
+		@sales_tax =  tax,new(0.1, ["Books", "Food", "Medical"])
+		@import_tax = tax,new(0.05, [])
+		@tax_total = 0
+		@grand_total = 0
 	end
 end
 
