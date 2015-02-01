@@ -1,7 +1,8 @@
+require_relative "./point"
+
 class Rover
 	def initialize(optional = {})
-		@x = optional[:x].to_i || 0
-		@y = optional[:y].to_i || 0
+		@point_at = Point.new(optional[:x].to_i, optional[:y].to_i)
 		@direction = optional[:direction].to_s || "N"
 	end
 
