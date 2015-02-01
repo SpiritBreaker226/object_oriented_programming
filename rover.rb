@@ -25,13 +25,13 @@ class Rover
 	def move
 		case @direction
 			when "N"
-				@y += 1
+				@point_at.add_x_y(:y, 1)
 			when "E"
-				@x += 1
+				@point_at.add_x_y(:x, 1)
 			when "S"
-				@y -= 1
+				@point_at.subtract_x_y(:y, 1)
 			when "W"
-				@x -= 1
+				@point_at.subtract_x_y(:x, 1)
 		end
 	end
 
