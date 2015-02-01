@@ -17,7 +17,7 @@ class Rover
 	end
 
 	def to_s
-		"#{@x} #{@y} #{@direction}"
+		"#{@point_at} #{@direction}"
 	end
 
 	private
