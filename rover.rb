@@ -75,5 +75,5 @@ x_y_plateau = gets.chomp.split(" ")
 	})
 
 	rover.read_instruction(rover_instructions)
-	output += rover.to_s << "\n"
+	puts "#{rover}\n"
 end
