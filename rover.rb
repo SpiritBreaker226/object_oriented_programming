@@ -1,4 +1,5 @@
 require_relative "./point"
+require_relative "./plateau"
 
 class Rover
 	def initialize(optional = {})
@@ -60,6 +61,7 @@ output = ""
 
 puts "Enter the size of the plateau"
 x_y_plateau = gets.chomp.split(" ")
+plateau = Plateau.new(x_y_plateau[0], x_y_plateau[0])
 
 2.times do 
 	puts "Enter the starting position for the rover"
